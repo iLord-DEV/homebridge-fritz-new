@@ -11,6 +11,7 @@ und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.
 - **Homebridge 2**: Das Plugin läuft unter Homebridge 1.6+ und 2.x. Eigene Characteristics sind jetzt ES6-Klassen, `Service.BatteryService` wurde durch `Service.Battery` ersetzt.
 ### 🐛 Fehlerbehebungen
 - **Warteschlange blockierte dauerhaft**: Nach einem Timeout oder Sitzungsfehler wartete die Wiederholung auf die eigene Warteschlange. Danach erreichte kein Befehl mehr die FRITZ!Box, bis Homebridge neu gestartet wurde. Die Wiederholung läuft jetzt direkt im laufenden Auftrag.
+- **Konfigurierte `url` wurde ignoriert**: Die Geräteliste ging immer an `http://fritz.box`, auch wenn eine andere Adresse konfiguriert war. Auf Systemen, auf denen `fritz.box` nicht auf diese Box zeigt, schlug die Erkennung fehl.
 - **Wiederholung von Temperaturbefehlen**: Das `isRetry`-Flag wurde auf den Temperaturwert gesetzt und hätte dort einen `TypeError` ausgelöst. Es entfällt.
 - **Polling-Statistik**: Temperatur und Stromverbrauch wurden schon beim Aufruf als Erfolg gezählt, auch wenn die FRITZ!Box nie geantwortet hat. Jetzt zählt das Ergebnis der Abfrage, Fehler erscheinen in der Polling-Zusammenfassung.
 - **Fehlgeschlagene Thermostat-Befehle**: HomeKit zeigte auch dann den gewünschten Zustand, wenn die FRITZ!Box den Befehl nie erhalten hatte. HomeKit bekommt jetzt einen Fehler gemeldet und der lokale Zustand wird zurückgesetzt. Das Umschalten von An/Aus steht zudem im Log.

@@ -95,6 +95,15 @@ describe('makeRequest retry after a session error', function() {
         assert.strictEqual(hkrCalls.length, 2);
     });
 
+    it('uses the configured url for commands without AIN', async function() {
+        get.callsFake(url => login(url) || Promise.resolve({ data: `<devicelist><device identifier="ain1"></device></devicelist>`, url }));
+
+        await withinTime(fritz.makeRequest('getDeviceList', undefined, {}));
+
+        const urls = get.getCalls().map(call => call.args[0]);
+        assert.ok(urls.includes('http://box.test/webservices/homeautoswitch.lua'), urls.join());
+    });
+
     it('keeps processing later commands after a retry', async function() {
         answer([() => failWith('ETIMEDOUT'), '42', '44']);
 
