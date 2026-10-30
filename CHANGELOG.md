@@ -13,6 +13,7 @@ und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.
 - **Warteschlange blockierte dauerhaft**: Nach einem Timeout oder Sitzungsfehler wartete die Wiederholung auf die eigene Warteschlange. Danach erreichte kein Befehl mehr die FRITZ!Box, bis Homebridge neu gestartet wurde. Die Wiederholung läuft jetzt direkt im laufenden Auftrag.
 - **Wiederholung von Temperaturbefehlen**: Das `isRetry`-Flag wurde auf den Temperaturwert gesetzt und hätte dort einen `TypeError` ausgelöst. Es entfällt.
 - **Polling-Statistik**: Temperatur und Stromverbrauch wurden schon beim Aufruf als Erfolg gezählt, auch wenn die FRITZ!Box nie geantwortet hat. Jetzt zählt das Ergebnis der Abfrage, Fehler erscheinen in der Polling-Zusammenfassung.
+- **Fehlgeschlagene Thermostat-Befehle**: HomeKit zeigte auch dann den gewünschten Zustand, wenn die FRITZ!Box den Befehl nie erhalten hatte. HomeKit bekommt jetzt einen Fehler gemeldet und der lokale Zustand wird zurückgesetzt. Das Umschalten von An/Aus steht zudem im Log.
 
 ## [1.0.76] - 2025-08-15
 
