@@ -14,6 +14,7 @@ und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.
 - **Wiederholung von Temperaturbefehlen**: Das `isRetry`-Flag wurde auf den Temperaturwert gesetzt und hätte dort einen `TypeError` ausgelöst. Es entfällt.
 - **Polling-Statistik**: Temperatur und Stromverbrauch wurden schon beim Aufruf als Erfolg gezählt, auch wenn die FRITZ!Box nie geantwortet hat. Jetzt zählt das Ergebnis der Abfrage, Fehler erscheinen in der Polling-Zusammenfassung.
 - **Fehlgeschlagene Thermostat-Befehle**: HomeKit zeigte auch dann den gewünschten Zustand, wenn die FRITZ!Box den Befehl nie erhalten hatte. HomeKit bekommt jetzt einen Fehler gemeldet und der lokale Zustand wird zurückgesetzt. Das Umschalten von An/Aus steht zudem im Log.
+- **Geräte blieben nicht erhalten**: Lieferte die FRITZ!Box wegen eines API-Fehlers eine leere Geräteliste, wurden alle Geräte aus HomeKit entfernt und mussten neu eingerichtet werden. Bei leerer Liste wird jetzt nichts mehr entfernt.
 
 ## [1.0.76] - 2025-08-15
 
