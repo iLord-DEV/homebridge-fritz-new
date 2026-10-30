@@ -5,6 +5,11 @@ Alle bemerkenswerten Änderungen an diesem Projekt werden in dieser Datei dokume
 Das Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.0.0/),
 und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### ✨ Neu
+- **Homebridge 2**: Das Plugin läuft unter Homebridge 1.6+ und 2.x. Eigene Characteristics sind jetzt ES6-Klassen, `Service.BatteryService` wurde durch `Service.Battery` ersetzt.
+
 ## [1.0.76] - 2025-08-15
 
 ### 📄 Dokumentation

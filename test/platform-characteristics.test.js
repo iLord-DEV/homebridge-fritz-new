@@ -17,14 +17,6 @@ class Characteristic {
     }
 }
 
-Characteristic.Formats = {
-    FLOAT: 'float'
-};
-Characteristic.Perms = {
-    READ: 'read',
-    NOTIFY: 'notify'
-};
-
 const homebridge = {
     hap: {
         Characteristic: Characteristic
@@ -33,17 +25,17 @@ const homebridge = {
 };
 
 describe('custom power characteristics', function() {
-    const FritzPlatform = require('../lib/platform')(homebridge);
-
     it('can be instantiated when Homebridge exposes Characteristic as a class', function() {
+        // Other test files register their own stubs with the same module
+        const FritzPlatform = require('../lib/platform')(homebridge);
         const powerUsage = new FritzPlatform.PowerUsage();
 
         assert(powerUsage instanceof Characteristic);
         assert.strictEqual(powerUsage.UUID, 'AE48F447-E065-4B31-8050-8FB06DB9E087');
         assert.deepStrictEqual(powerUsage.props, {
-            format: Characteristic.Formats.FLOAT,
+            format: 'float',
             unit: 'W',
-            perms: [Characteristic.Perms.READ, Characteristic.Perms.NOTIFY]
+            perms: ['pr', 'ev']
         });
     });
 });
