@@ -5,6 +5,11 @@ Alle bemerkenswerten Änderungen an diesem Projekt werden in dieser Datei dokume
 Das Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.0.0/),
 und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### 🐛 Fehlerbehebungen
+- **Fehlgeschlagene Thermostat-Befehle**: HomeKit zeigte auch dann den gewünschten Zustand, wenn die FRITZ!Box den Befehl nie erhalten hatte. HomeKit bekommt jetzt einen Fehler gemeldet und der lokale Zustand wird zurückgesetzt. Das Umschalten von An/Aus steht zudem im Log.
+
 ## [1.0.76] - 2025-08-15
 
 ### 📄 Dokumentation
