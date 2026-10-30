@@ -9,6 +9,7 @@ und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.
 
 ### 🐛 Fehlerbehebungen
 - **Warteschlange blockierte dauerhaft**: Nach einem Timeout oder Sitzungsfehler wartete die Wiederholung auf die eigene Warteschlange. Danach erreichte kein Befehl mehr die FRITZ!Box, bis Homebridge neu gestartet wurde. Die Wiederholung läuft jetzt direkt im laufenden Auftrag.
+- **Konfigurierte `url` wurde ignoriert**: Die Geräteliste ging immer an `http://fritz.box`, auch wenn eine andere Adresse konfiguriert war. Auf Systemen, auf denen `fritz.box` nicht auf diese Box zeigt, schlug die Erkennung fehl.
 - **Wiederholung von Temperaturbefehlen**: Das `isRetry`-Flag wurde auf den Temperaturwert gesetzt und hätte dort einen `TypeError` ausgelöst. Es entfällt.
 
 ## [1.0.76] - 2025-08-15
