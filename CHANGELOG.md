@@ -5,6 +5,11 @@ Alle bemerkenswerten Änderungen an diesem Projekt werden in dieser Datei dokume
 Das Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.0.0/),
 und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### 🐛 Fehlerbehebungen
+- **Geräte blieben nicht erhalten**: Lieferte die FRITZ!Box wegen eines API-Fehlers eine leere Geräteliste, wurden alle Geräte aus HomeKit entfernt und mussten neu eingerichtet werden. Bei leerer Liste wird jetzt nichts mehr entfernt.
+
 ## [1.0.76] - 2025-08-15
 
 ### 📄 Dokumentation
