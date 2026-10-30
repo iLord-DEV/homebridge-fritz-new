@@ -5,6 +5,11 @@ Alle bemerkenswerten Änderungen an diesem Projekt werden in dieser Datei dokume
 Das Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.0.0/),
 und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### 🐛 Fehlerbehebungen
+- **Polling-Statistik**: Temperatur und Stromverbrauch wurden schon beim Aufruf als Erfolg gezählt, auch wenn die FRITZ!Box nie geantwortet hat. Jetzt zählt das Ergebnis der Abfrage, Fehler erscheinen in der Polling-Zusammenfassung.
+
 ## [1.0.76] - 2025-08-15
 
 ### 📄 Dokumentation
