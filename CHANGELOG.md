@@ -9,6 +9,9 @@ und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.
 
 ### ✨ Neu
 - **Homebridge 2**: Das Plugin läuft unter Homebridge 1.6+ und 2.x. Eigene Characteristics sind jetzt ES6-Klassen, `Service.BatteryService` wurde durch `Service.Battery` ersetzt.
+### 🐛 Fehlerbehebungen
+- **Warteschlange blockierte dauerhaft**: Nach einem Timeout oder Sitzungsfehler wartete die Wiederholung auf die eigene Warteschlange. Danach erreichte kein Befehl mehr die FRITZ!Box, bis Homebridge neu gestartet wurde. Die Wiederholung läuft jetzt direkt im laufenden Auftrag.
+- **Wiederholung von Temperaturbefehlen**: Das `isRetry`-Flag wurde auf den Temperaturwert gesetzt und hätte dort einen `TypeError` ausgelöst. Es entfällt.
 
 ## [1.0.76] - 2025-08-15
 
