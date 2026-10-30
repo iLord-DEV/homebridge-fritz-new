@@ -5,6 +5,12 @@ Alle bemerkenswerten Änderungen an diesem Projekt werden in dieser Datei dokume
 Das Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.0.0/),
 und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### 🐛 Fehlerbehebungen
+- **Warteschlange blockierte dauerhaft**: Nach einem Timeout oder Sitzungsfehler wartete die Wiederholung auf die eigene Warteschlange. Danach erreichte kein Befehl mehr die FRITZ!Box, bis Homebridge neu gestartet wurde. Die Wiederholung läuft jetzt direkt im laufenden Auftrag.
+- **Wiederholung von Temperaturbefehlen**: Das `isRetry`-Flag wurde auf den Temperaturwert gesetzt und hätte dort einen `TypeError` ausgelöst. Es entfällt.
+
 ## [1.0.76] - 2025-08-15
 
 ### 📄 Dokumentation
